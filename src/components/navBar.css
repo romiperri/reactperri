@@ -4,10 +4,13 @@
 }
 
 .navBar {
-    background-color: rgb(154, 223, 211);
+    background-color: rgb(161, 206, 161);
+    display: flex;
+    justify-content: space-around;
 }
 
 h1 {
+    padding: 1%;
     color: white;
     font-size: 35px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -25,9 +28,15 @@ ul li {
 }
 
 ul li a {
+    margin: 20px;
     color: rgb(255, 255, 255);
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     text-decoration: none;
     padding: 0px;
+}
+
+.Cart{
+   padding: 2%;
+   width: 60px;
 }
