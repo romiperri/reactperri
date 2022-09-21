@@ -6,7 +6,7 @@
 .navBar {
     background-color: rgb(161, 206, 161);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 h1 {
