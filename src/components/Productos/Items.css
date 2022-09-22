@@ -16,3 +16,8 @@ h2{
     margin: 2%;
     padding: 2%;
 }
+
+.containerCard{
+    display: flex;
+    justify-content: space-between;
+}

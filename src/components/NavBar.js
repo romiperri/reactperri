@@ -6,7 +6,7 @@ function NavBar() {
     return (
 
         <div className="navBar">
-            <h1>Tienda Eco</h1>
+            <h1>Tienda de Libros</h1>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>

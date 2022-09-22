@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
      <NavBar/>
-     <ItemListContainer greeting="Tienda online de productos organicos" />
+     <ItemListContainer greeting="Tienda online de libros" />
       <header className="App-header">
       </header>
     </div>
