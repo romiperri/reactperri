@@ -32,7 +32,15 @@ const data = [
 export default function getData() {
     return new Promise((resolve, rejetc) => {
         setTimeout(() => {
-        resolve(data)
+            resolve(data)
         }, 2500)
+    });
+}
+
+export function geItem() {
+    return new Promise((resolve, rejetc) => {
+        setTimeout(() => {
+            resolve(data[1]);
+        }, 2000);
     });
 }
