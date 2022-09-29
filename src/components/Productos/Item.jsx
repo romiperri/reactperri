@@ -1,8 +1,11 @@
 import React from 'react';
 import "./Card.css";
+import {Link} from "react-router-dom"; 
 
 function Item(props) {
-    let { price, title, img, gender } = props;
+    let { price, title, img, gender,id } = props;
+    
+    const urlDetail = `/detail/${id}`; 
 
     return (
         <div className='card'>
@@ -14,6 +17,9 @@ function Item(props) {
                 <p>{gender}</p>
                 <h4>${price}</h4>
             </div>
+            <Link to={urlDetail}>
+                <button> Ver más</button>
+            </Link>
         </div>
     );
 }
