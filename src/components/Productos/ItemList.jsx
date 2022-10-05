@@ -13,7 +13,7 @@ function ItemList(props) {
                         price={item.price}
                         title={item.title}
                         img={item.img}
-                        gender={item.gender}
+                        genre={item.genre}
                     />
                 );
             })}

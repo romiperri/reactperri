@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './ItemCount.css'
 
-function ItemCount(props) {
-    const [count, setCount] = useState(props.initial);
+//onAddToCart
+
+function ItemCount({ stock, onAddToCart }) {
+    const [count, setCount] = useState(1);
 
     function sumar() {
-        if (count < props.stock) {
+        if (count < stock) {
             setCount(count + 1);
-        } else {
-            alert('No hay más disponibles en stock');
         }
     }
 
@@ -19,9 +19,7 @@ function ItemCount(props) {
         }
     }
 
-    function agregar() {
-        alert('Agregado al carrito');
-    }
+
 
     return (
         <div>
@@ -29,7 +27,7 @@ function ItemCount(props) {
             <span className='cantidad'>{count}</span>
             <button className='buttonSumar' onClick={sumar}>+</button>
             <div>
-                <button className='buttonAdd' onClick={agregar}>Agregar al carrito</button>
+                <button className='buttonAdd' onClick={() => onAddToCart(count)}>Agregar al carrito</button>
             </div>
         </div>
     )
