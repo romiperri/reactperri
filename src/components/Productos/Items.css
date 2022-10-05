@@ -19,5 +19,5 @@ h2{
 
 .containerCard{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }

@@ -8,25 +8,54 @@
     margin: 2%;
     background-color: rgba(216, 216, 216, 0.712);
     width: 30%;
-    box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.Item-img{
+.Item-img {
     padding: 2%;
     margin: auto 15px;
 }
 
-.card-detail{
+.card-detail {
     padding: 4%;
     margin: auto 2%;
 }
 
-.p{
+.p {
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h2, h3,h4 {
+h2,
+h3,
+h4 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
 }
+
+.btnFin {
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #000000;
+    border: 2px solid;
+    border-color: #dadada;
+    position: relative;
+}
+
+.btnFin:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.233);
+    transition: all 1s ease;
+}
+
+.btnFin:hover:before{
+    width: 100%;
+}
+
