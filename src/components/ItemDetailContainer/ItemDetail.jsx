@@ -10,7 +10,7 @@ function ItemDetail({ item }) {
 
     function handleAddToCart(count) {
         addItem(item, count)
-        
+
         setEstadoCart(true);
         alert(`Agregaste al carrito, ${count} ${item.title}`);
     }
