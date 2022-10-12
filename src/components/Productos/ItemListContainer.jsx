@@ -7,7 +7,8 @@ import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
-    let [data, setData] = useState([]);
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const { cat } = useParams();
 
@@ -16,15 +17,18 @@ function ItemListContainer() {
             getData().then((respuesta) => setData(respuesta));
         }
         else {
-            getItemsCategory(cat).then((respuesta) => setData(respuesta));
+            getItemsCategory(cat)
+                .then((respuesta) => setData(respuesta))
+                .finally(() => setIsLoading(false))
         }
     }, [cat]);
- 
+
+    
     return (
         <div>
             <h2>Productos de la tienda</h2>
             <ItemList data={data} />
-    
+
         </div>
     );
 }

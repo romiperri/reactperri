@@ -7,11 +7,12 @@ import { cartContext } from "../context/cartContext";
 
 function CartWidget() {
     const { getItemCount } = useContext(cartContext)
-    
-    return (
-        
-        <FontAwesomeIcon className="Cart" icon={faCartShopping} />
 
+    return (
+        <div>  
+            <span>{getItemCount()}</span>
+            <FontAwesomeIcon className="Cart" icon={faCartShopping} />
+        </div>
     )
 }
 
