@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { geItem } from '../../dataBase/mockAPI';
+import { geItem } from '../../dataBase/firestore';
 import "./ItemDetail.css";
 import { useParams } from "react-router-dom";
 import ItemDetail from './ItemDetail';
-import { Jelly } from '@uiball/loaders'
+import { ChaoticOrbit } from '@uiball/loaders'
 
 
 
@@ -16,7 +16,8 @@ function ItemDetailContainer() {
 
     useEffect(
         () => {
-            geItem(id).then((respuesta) => setData(respuesta))
+            geItem(id)
+                .then((respuesta) => setData(respuesta))
                 .catch((errormsg) => {
                     setError(errormsg.message);
                 })
@@ -32,10 +33,10 @@ function ItemDetailContainer() {
                         <p>{error}</p>
                     </div>
                 ) : (
-                    <Jelly
-                        size={80}
-                        speed={0.9}
-                        color="black"
+                    <ChaoticOrbit
+                        size={40}
+                        speed={1.5}
+                        color="lightblue"
                     />
                 )
                 }
