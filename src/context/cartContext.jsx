@@ -5,11 +5,12 @@ export const cartContext = createContext();
 const { Provider } = cartContext;
 
 const ContextProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
 
     // existe o no en el carrito 
-    const isInCart = (id) => {
-        return cart.some((item) => item.id === id);
+    function isInCart(id) {
+        let found = cart.some((item) => item.id === id);
+        return found;
     };
 
     //agregar al carrito

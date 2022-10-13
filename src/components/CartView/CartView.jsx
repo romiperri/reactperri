@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 function CartView() {
     const context = useContext(cartContext);
     const { cart, isInCart, deleteItem } = context;
-    const  idCart = parseInt(cart.map((item) => item.id));
+    const idCart = parseInt(cart.map((item) => item.id));
 
     if (isInCart(idCart) === false) {
         return (
             <div>
 
                 <h3>
-                    Tu carrito esta vacio... Quieres seguir comprando?
+                    Tu carrito esta vacio!
                 </h3>
                 <Link to={"/cart"}>
                     Seguir Comprando!
@@ -29,15 +29,14 @@ function CartView() {
                 <strong>{item.title}</strong>
                 <div>
                     <br />
-                    Precio:{item.price} $ Cantidad: {item.count}
+                    Precio: $ {item.price}  Cantidad: {item.count}
                 </div>
 
                 <br />
 
-                <button onClick={() => deleteItem(item.id)} aria-label="delete">
+                <button onClick={() => deleteItem(item.id)}>
                     <button />
                 </button>
-
 
             </div>
         ));
