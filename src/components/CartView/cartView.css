@@ -1,0 +1,25 @@
+
+h2 {
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cartList{
+    border-spacing: 0;
+    width: 95%;
+    margin: 15px auto;
+    text-align: center;
+  }
+  
+  .cartList-head{
+    background-color: #65bdadaf;
+    margin: 10px auto;
+  }
+  
+  .cartList-row{
+    line-height: 46px;
+  }
+
+  .cartList-img{
+    height: 140px;
+  }
+

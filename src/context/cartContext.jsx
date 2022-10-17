@@ -1,25 +1,24 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const cartContext = createContext();
 
 const { Provider } = cartContext;
 
-const ContextProvider = ({ children }) => {
+function MyProvider({ children }) {
     const [cart, setCart] = useState([]);
 
-    // existe o no en el carrito 
+    // esta en el carrito?
     function isInCart(id) {
         let found = cart.some((item) => item.id === id);
         return found;
-    };
-
+    }
     //agregar al carrito
     const addItem = (item, count) => {
         const newCart = {
             ...item,
             count,
         };
-        if (isInCart(newCart.id)) {
+        if (isInCart()) {
             const findProducto = cart.filter((x) => x.id === newCart.id);
             const productoIndex = cart.indexOf(findProducto);
             const copiaCart = [...cart];
@@ -29,38 +28,41 @@ const ContextProvider = ({ children }) => {
             setCart([...cart, newCart]);
         }
     };
-
     // vaciar carrito
     const emptyCart = () => {
         return setCart([]);
     };
+    
+    // eliminar item especifico
 
-    // eliminar un item en específico
-    const deleteItem = (id) => {
+    function deleteItem(id) {
         return setCart(cart.filter((item) => item.id !== id));
-    };
+    }
 
-    // Retorna cantidad de unidades en el carrito
+    //cantidad de unidades en el carrito
     const getItemCount = () => {
         return cart.reduce((acc, item) => (acc += item.count), 0);
     };
-
     // precio
     const getItemPrice = () => {
         return cart.reduce((acc, item) => (acc += item.price * item.count), 0);
     };
 
-
-    return <Provider value={{
-        isInCart,
-        addItem,
-        emptyCart,
-        deleteItem,
-        getItemCount,
-        getItemPrice,
-    }}>
-        {children}
-    </Provider>
+    return (
+        <Provider
+            value={{
+                cart,
+                isInCart,
+                addItem,
+                emptyCart,
+                deleteItem,
+                getItemCount,
+                getItemPrice,
+            }}
+        >
+            {children}
+        </Provider>
+    );
 }
 
-export default ContextProvider; 
+export default MyProvider;

@@ -1,45 +1,35 @@
-import React from 'react';
-import { cartContext } from '../../context/cartContext';
-import { useContext } from 'react';
+import React from "react";
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
+import CartList from "./CartList";
+import "./cartView.css";
 
 
 function CartView() {
     const context = useContext(cartContext);
-    const { cart, isInCart, deleteItem } = context;
-    const idCart = parseInt(cart.map((item) => item.id));
+    const { cart } = context;
 
-    if (isInCart(idCart) === false) {
+    if (cart.length === 0) {
         return (
             <div>
-
                 <h3>
-                    Tu carrito esta vacio!
+                    Tu carrito se encuentra vacío - Comience a comprar!
                 </h3>
-                <Link to={"/cart"}>
+                <Link to={"/"}>
                     Seguir Comprando!
                 </Link>
             </div>
         );
     } else {
-        return cart.map((item) => (
-            <div>
-                <img src={item.img} alt="" />
+        return (
+            <>
+                <h2>Carrito</h2>
+                <hr />
+                <CartList />
+            </>
+        );
 
-                <strong>{item.title}</strong>
-                <div>
-                    <br />
-                    Precio: $ {item.price}  Cantidad: {item.count}
-                </div>
-
-                <br />
-
-                <button onClick={() => deleteItem(item.id)}>
-                    <button />
-                </button>
-
-            </div>
-        ));
     }
 }
 
