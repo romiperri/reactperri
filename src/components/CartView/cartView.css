@@ -3,6 +3,11 @@ h2 {
    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+h3{
+  padding: 15px;
+  font-size: 20px;
+}
+
 .cartList{
     border-spacing: 0;
     width: 95%;
@@ -20,6 +25,19 @@ h2 {
   }
 
   .cartList-img{
+    padding: 10px;
     height: 140px;
   }
+  
+  .btn-Cart{
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #000000;
+    border: 2px solid;
+    border-color: #dadada;
+    position: relative;
+  }
 
+ 

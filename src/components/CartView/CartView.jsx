@@ -17,14 +17,14 @@ function CartView() {
                     Tu carrito se encuentra vacío - Comience a comprar!
                 </h3>
                 <Link to={"/"}>
-                    Seguir Comprando!
+                    <button className="btn-Cart">Seguir Comprando!</button>
                 </Link>
             </div>
         );
     } else {
         return (
             <>
-                <h2>Carrito</h2>
+                <h2>Mi Carrito</h2>
                 <hr />
                 <CartList />
             </>
