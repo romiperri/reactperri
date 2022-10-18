@@ -15,7 +15,6 @@ function ItemListContainer() {
     const { cat } = useParams();
 
     useEffect(() => {
-        setData([]);
         setIsLoading(true);
         if (cat === undefined) {
             getData()
