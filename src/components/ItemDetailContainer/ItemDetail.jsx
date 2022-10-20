@@ -12,7 +12,7 @@ function ItemDetail({ item }) {
         addItem(item, count)
 
         setEstadoCart(true);
-        alert(`Agregaste al carrito, ${count} ${item.title}`);
+
     }
 
     return (
@@ -27,6 +27,7 @@ function ItemDetail({ item }) {
                     </h2>
                     <h3>Autor : {item.author}</h3>
                     <p className="descripcion">Género: {item.genre}</p>
+                    <p> <strong>Precio: ${item.price}</strong></p>
                     <p>Sinopsis: {item.sinopsis}</p>
                 </div>
                 {estadoCart === false ? (<ItemCount
