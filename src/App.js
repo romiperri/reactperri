@@ -5,6 +5,8 @@ import ItemListContainer from "./components/Productos/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartView from "./components/CartView/CartView";
 import MyProvider from "./context/cartContext";
+import Checkout from "./components/Checkout/Checkout";
+import Form from "./components/Checkout/Form";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             />
             <Route path="/detail/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartView />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/form/:orderid" element={<Form />} />
           </Routes>
         </MyProvider>
       </BrowserRouter>

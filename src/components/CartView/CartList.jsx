@@ -1,11 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
+import { Link } from 'react-router-dom';
 import "./cartView.css";
 
 function CartList() {
     const context = useContext(cartContext);
-    const { cart, deleteItem, getItemPrice } = context;
+    const { cart, deleteItem, getItemPrice, emptyCart } = context;
 
 
     return (
@@ -40,7 +41,13 @@ function CartList() {
                     })}
                 </tbody>
             </table>
-            <h3>El total de tu compra es de $ {getItemPrice()}</h3>
+            <h4>Total: $ {getItemPrice()}</h4>
+            <div>
+                <Link to="/checkout">
+                    <button className='btn-Cart'>Check-out</button>
+                </Link>
+                <button className='btn-Cart' onClick={emptyCart}>Vaciar carrito</button>
+            </div>
         </div>
     )
 }

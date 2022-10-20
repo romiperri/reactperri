@@ -1,0 +1,22 @@
+.check-container {
+    padding: 50px;
+    background-color: rgb(146, 106, 184);
+    display: flex;
+    justify-content: center;
+}
+
+.check-item{
+    padding: 5%;
+}
+
+.btn-checkout {
+    margin: 4%;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #000000;
+    border: 2px solid;
+    border-color: #dadada;
+    position: relative;
+}
