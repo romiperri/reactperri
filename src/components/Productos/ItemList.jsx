@@ -3,7 +3,7 @@ import Item from "./Item";
 
 function ItemList(props) {
     return (
-        <div className='containerCard'>
+        <div className='grid grid-cols-3 gap-2 '>
             {props.data.map((item) => {
                 console.log(item);
                 return (

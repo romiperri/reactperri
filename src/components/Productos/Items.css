@@ -1,16 +1,10 @@
-*{
-    margin: 0%;
-    padding: 0%;
-}
 
 h2{
     padding: 2%;
-    display: flex;
-    justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.contador{
+/* .contador{
     display: flex;
     justify-content:space-around;
     margin: 2%;
@@ -20,4 +14,4 @@ h2{
 .containerCard{
     display: flex;
     justify-content: space-around;
-}
+} */

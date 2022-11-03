@@ -7,6 +7,7 @@ import CartView from "./components/CartView/CartView";
 import MyProvider from "./context/cartContext";
 import Checkout from "./components/Checkout/Checkout";
 import Form from "./components/Checkout/Form";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/form/:orderid" element={<Form />} />
           </Routes>
+          <Footer />
         </MyProvider>
       </BrowserRouter>
     </div>

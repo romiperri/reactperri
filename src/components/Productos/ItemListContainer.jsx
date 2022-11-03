@@ -5,7 +5,8 @@ import './Items.css';
 import { getData, getItemsCategory } from "../../dataBase/firestore";
 import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
-import { ChaoticOrbit } from '@uiball/loaders'
+import { LeapFrog } from '@uiball/loaders'
+
 
 
 function ItemListContainer() {
@@ -30,14 +31,15 @@ function ItemListContainer() {
 
     return (
         <div>
-            {isLoading && <ChaoticOrbit
-                size={40}
-                speed={1.5}
-                color="lightblue"
-            />}
+            <div className='flex justify-center p-8'>
+                {isLoading && <LeapFrog
+                    size={85}
+                    speed={2.5}
+                    color="orange"
+                />}
+            </div>
 
             <div>
-                <h2>Productos de la tienda</h2>
                 <ItemList data={data} />
 
             </div>

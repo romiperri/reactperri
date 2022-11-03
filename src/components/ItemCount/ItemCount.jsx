@@ -26,8 +26,8 @@ function ItemCount({ stock, onAddToCart }) {
             <button className='buttonRestar' onClick={restar}>-</button>
             <span className='cantidad'>{count}</span>
             <button className='buttonSumar' onClick={sumar}>+</button>
-            <div>
-                <button className='buttonAdd' onClick={() => onAddToCart(count)}>Agregar al carrito</button>
+            <div className='py-3'>
+                <button className='items-center bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-1 px-5 border border-orange-500 hover:border-transparent rounded' onClick={() => onAddToCart(count)}>Agregar al carrito</button>
             </div>
         </div>
     )

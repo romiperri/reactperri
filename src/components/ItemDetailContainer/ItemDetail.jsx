@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { cartContext } from '../../context/cartContext';
 import ItemCount from '../ItemCount/ItemCount';
-import "./ItemDetail.css";
 
 function ItemDetail({ item }) {
     const [estadoCart, setEstadoCart] = useState(false);
@@ -16,27 +15,34 @@ function ItemDetail({ item }) {
     }
 
     return (
-        <div className='Item-contenedor'>
-            <div>
-                <img className="Item-img" src={item.img} alt=""></img>
-            </div>
-            <div className="Item-detail">
-                <div className="card-detail">
-                    <h2>
+        <div className="container p-8">
+            <div className="flex justify-around ">
+                <div>
+                    <img className="Item-img" src={item.img} alt=""></img>
+                </div>
+                <div>
+                    <h2 className="text-2xl font-bold">
                         {item.title}
                     </h2>
-                    <h3>Autor : {item.author}</h3>
+                    <p className='py-3'> Autor: {item.author}</p>
                     <p className="descripcion">Género: {item.genre}</p>
-                    <p> <strong>Precio: ${item.price}</strong></p>
-                    <p>Sinopsis: {item.sinopsis}</p>
+                    <p className="py-3 ">Precio unitario: ${item.price}</p>
                 </div>
-                {estadoCart === false ? (<ItemCount
-                    stock={item.stock}
-                    onAddToCart={handleAddToCart}
-                />) : (<Link className='btnFin' to={"/cart"}>Finalizar compra</Link>)}
-
+                <div>
+                    {estadoCart === false ? (<ItemCount
+                        stock={item.stock}
+                        onAddToCart={handleAddToCart}
+                    />) : (<Link className='items-center bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-1 px-5 border border-orange-500 hover:border-transparent rounded' to={"/cart"}>Finalizar compra</Link>)}
+                </div>
+            </div>
+            <div className="py-6">
+                <p className="text-sm tracking-wider leading-relaxed "> Sinopsis <br />
+                    <hr />
+                    {item.sinopsis}
+                </p>
             </div>
         </div>
+
     )
 }
 
