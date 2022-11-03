@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { geItem } from '../../dataBase/firestore';
-import "./ItemDetail.css";
 import { useParams } from "react-router-dom";
 import ItemDetail from './ItemDetail';
-import { ChaoticOrbit } from '@uiball/loaders'
+import { LeapFrog } from '@uiball/loaders'
 
 
 
@@ -33,11 +32,12 @@ function ItemDetailContainer() {
                         <p>{error}</p>
                     </div>
                 ) : (
-                    <ChaoticOrbit
-                        size={40}
-                        speed={1.5}
-                        color="lightblue"
-                    />
+                    <div className='flex justify-center p-8'>
+                        <LeapFrog
+                            size={85}
+                            speed={2.5}
+                            color="orange" />
+                    </div>
                 )
                 }
             </>

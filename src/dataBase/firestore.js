@@ -34,8 +34,8 @@ export async function geItem(idParams) {
     return { ...docSnapshot.data(), id: docSnapshot.id };
 }
 export async function getItemsCategory(catParams) {
-    const collectionRef = collection(firestore, "productos");
-    const queryCat = query(collectionRef, where("categoria", "==", catParams));
+    const collectionRef = collection(firestore, "libros");
+    const queryCat = query(collectionRef, where("category", "==", catParams));
 
     const respuesta = await getDocs(queryCat)
 
@@ -52,5 +52,6 @@ export async function createBuyOrder(orderData) {
 
     return respuesta.id;
 }
+
 
 export default firestore;

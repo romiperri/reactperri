@@ -29,15 +29,7 @@ h3{
     height: 140px;
   }
   
-  .btn-Cart{
-    color: #fff !important;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 0.5em 1.2em;
-    background: #000000;
-    border: 2px solid;
-    border-color: #dadada;
-    position: relative;
+  .btn-delete{
+    width: 35px;
+    color:red;
   }
-
- 
