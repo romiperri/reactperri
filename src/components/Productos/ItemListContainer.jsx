@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-/* import ItemCount from '../ItemCount/ItemCount';
- */
-import './Items.css';
 import { getData, getItemsCategory } from "../../dataBase/firestore";
 import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
@@ -40,6 +37,7 @@ function ItemListContainer() {
             </div>
 
             <div>
+
                 <ItemList data={data} />
 
             </div>
