@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './ItemCount.css'
 
-//onAddToCart
-
 function ItemCount({ stock, onAddToCart }) {
     const [count, setCount] = useState(1);
 
@@ -12,14 +10,11 @@ function ItemCount({ stock, onAddToCart }) {
         }
     }
 
-
     function restar() {
         if (count > 1) {
             setCount(count - 1);
         }
     }
-
-
 
     return (
         <div>

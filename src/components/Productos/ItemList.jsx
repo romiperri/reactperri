@@ -5,7 +5,6 @@ function ItemList(props) {
     return (
         <div className='grid grid-cols-3 gap-2 '>
             {props.data.map((item) => {
-                console.log(item);
                 return (
                     <Item
                         key={item.id}
@@ -18,7 +17,7 @@ function ItemList(props) {
                 );
             })}
         </div>
-        )
+    )
 }
 
 export default ItemList;

@@ -7,12 +7,11 @@ const { Provider } = cartContext;
 function MyProvider({ children }) {
     const [cart, setCart] = useState([]);
 
-    // esta en el carrito?
     function isInCart(id) {
         let found = cart.some((item) => item.id === id);
         return found;
     }
-    //agregar al carrito
+
     const addItem = (item, count) => {
         const newCart = {
             ...item,
@@ -28,22 +27,21 @@ function MyProvider({ children }) {
             setCart([...cart, newCart]);
         }
     };
-    // vaciar carrito
+
     const emptyCart = () => {
         return setCart([]);
     };
-    
-    // eliminar item especifico
+
 
     function deleteItem(id) {
         return setCart(cart.filter((item) => item.id !== id));
     }
 
-    //cantidad de unidades en el carrito
+
     const getItemCount = () => {
         return cart.reduce((acc, item) => (acc += item.count), 0);
     };
-    // precio
+
     const getItemPrice = () => {
         return cart.reduce((acc, item) => (acc += item.price * item.count), 0);
     };
