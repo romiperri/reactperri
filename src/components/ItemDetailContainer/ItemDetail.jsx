@@ -37,7 +37,6 @@ function ItemDetail({ item }) {
             </div>
             <div className="py-6">
                 <p className="text-sm tracking-wider leading-relaxed "> Sinopsis <br />
-                    <hr />
                     {item.sinopsis}
                 </p>
             </div>
